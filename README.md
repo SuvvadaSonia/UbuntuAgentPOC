@@ -1,5 +1,4 @@
 # UbuntuAgentPOC
-# UbuntuAgentPOC
 
 ## Description
 It gets device's scope information of windows from ubuntu and also installs package in remote device in that network scope.
