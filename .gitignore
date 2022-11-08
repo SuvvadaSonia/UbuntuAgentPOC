@@ -1,7 +1,0 @@
-.vscode
-*.pyc
-gitToken.txt
-.ruff_cache
-build
-dist
-remote_agent.egg-info

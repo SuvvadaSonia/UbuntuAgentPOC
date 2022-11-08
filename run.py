@@ -1,25 +1,29 @@
 """ Ubuntu Agent POC 
 Author by: Suvvada Sonia
 
-"""
+It connects to windows machine using WinRm
+and executes installer & uninstaller scripts
+
+-----------------------
+Author: Suvvada Sonia - Jr. Software Engineer - sonia.s@tessrac.com
+CopyRights - Tessrac Innovations Pvt Ltd.
 
 """
-    It connects to remote network device and runs installer scirpt and returns response to the ESE server-gateway
-"""
-# from connector import Connector
-from connector.Connectors.JumpServerConnection import SSHAgent
 
+# import winrm
 
+# session = winrm.Session('192.168.43.193', auth = ('CT', '1234567890'))
+# # session = winrm.Session('192.168.43.193', auth = ('CT', '1234567890'))
+# # session = winrm.Session('192.168.56.1', auth = ('varalaxmi', 'Varalaxmi'))
+# # session = winrm.Session('192.168.0.103', auth = ('vinod', 'Do0ordie17k'))
+# output = session.run_cmd('ipconfig', ['/all'])
 
-if __name__ == "__main__":
+# print(output)
 
-    obj = SSHAgent(jumpDevice=('192.168.0.94','vinod','Do0ordie17k*'),remoteDevice=('god-VirtualBox','god','India@123'))
-    obj.execute_cmd('ls -l')
+import winrm
 
-    # print(arr[0,1]['user'], arr.size)
-    # pass
-    # connObj = Connector('windows','192.168.0.105',('vinod','Do0ordie17k*')).GetConnObj()
-    # if connObj:
-    #     connObj.getConfig()
-    # print(getsizeof(device_payload), ' ', device_payload)
-    # print(getsizeof(arr), ' ', arr)
+s = winrm.Session('10.0.2.15', auth=('SoniaWin', 'Sonia@5355'))
+r = s.run_cmd('ipconfig', ['/all'])
+print(r.status_code)
+print(r.std_out)
+print(r.std_err)
