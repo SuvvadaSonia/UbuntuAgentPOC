@@ -1,4 +1,6 @@
-""" Ubuntu Agent POC 
+""" 
+
+Ubuntu Agent POC 
 Author by: Suvvada Sonia
 
 It connects to windows machine using WinRm
@@ -10,7 +12,8 @@ CopyRights - Tessrac Innovations Pvt Ltd.
 
 """
 
-import winrm
+import winrm  # WinRM allows you to perform various management tasks remotely.
+
 s = winrm.Session('192.168.1.105', auth=('Administrator', 'India@123'))
 ip_config = s.run_cmd('ipconfig', ['/all'])         # for ip configuration
 cpu_util = s.run_cmd('wmic cpu get loadpercentage')          # for cpu utilization
